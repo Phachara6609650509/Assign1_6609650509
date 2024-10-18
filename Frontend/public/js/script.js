@@ -35,18 +35,7 @@ function submitLogin() {
         return;
     }
 
-    // Check role selection
-    if (userRole === 'selected') {
-        showMessage('Please select your role', 'error');
-        return;
-    }
-
-    // Handle lecturer role
-    if (userRole === 'lecturer') {
-        showMessage('Access denied. This system is for students only.', 'error');
-        return;
-    }
-
+    
     // Proceed with student login
     fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
         method: 'POST',
